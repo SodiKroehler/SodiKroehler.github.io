@@ -83,10 +83,17 @@ class Brother {
       if (i != picker){
 
         var randomBrother = Math.floor(Math.random()*this.totalNodes)+1;
-
-        /*while (Dictionary[randomBrother][category] == this.children[v]){
-          randomBrother = Math.floor(Math.random()*this.totalNodes)+1;
-        }*/
+        var flag = false;
+        
+        while(flag == false){
+          for (int i=0; i<4; i++){
+            if (Dictionary[randomBrother][category] == this.children[v]){
+              randomBrother = Math.floor(Math.random()*this.totalNodes)+1;
+            } else {
+              flag = true;
+            }
+          }
+        }
 
         this.children[i] = Dictionary[randomBrother][category];
 
