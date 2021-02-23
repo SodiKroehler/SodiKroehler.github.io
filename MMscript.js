@@ -86,7 +86,7 @@ class Brother {
         var flag = false;
         
         while(flag == false){
-          for (int i=0; i<4; i++){
+          for (var v=0; v<4; v++){
             if (Dictionary[randomBrother][category] == this.children[v]){
               randomBrother = Math.floor(Math.random()*this.totalNodes)+1;
             } else {
