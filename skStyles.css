@@ -1,0 +1,27 @@
+body{
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+    width:50%;
+    margin-left: 25%; 
+}
+#profileBar{
+    height: 25%;
+}
+#myName{
+    font-size: large;
+}
+#bioSection{
+    column-count: 2;
+    column-rule: 1px solid darkgray;
+}
+#profilePic{
+    display: inline-block;
+    width:25%;
+}
+.Button{
+    display: inline-block;
+    padding: 15px;
+    border-radius:5px;
+    justify-content: center;
+    background-color: brown;
+}
