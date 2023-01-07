@@ -4,7 +4,7 @@
  var collectedWorks;
  fetch('./works.json')
      .then((response) => response.json())
-     .then((json) => collectedWorks = JSON.parse(collectedWorksFile));
+     .then((json) => collectedWorks = json);
 //var collectedWorksFile = '{"works": [{"idx" : 1,"title": "Homo Stultus - for gods", "desc": "Homo Stultus, for gods is a collection of nine fictional pieces of academic writing (i.e. lectures, court rulings, patent filing forms, etc.), supposedly compiled in the year 3055 and time-shipped back to us, which address ethical, philosophical, and social governance issues from their day. While generally humorous and light-hearted, it sets out several novel views on morality and philosophy of mind, particularly in applications of artificial intelligences. It also includes three versions of the true, and as yet untold, story of a former member of the Twelve Tribes cult.", "b1link": "http://cslabcms.nju.edu.cn/problem_solving/images/4/46/Problem_Solving_with_C%2B%2B_%289th_Savitch%29.pdf", "b2link": ""}]}';
 
 
