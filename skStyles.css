@@ -71,9 +71,6 @@ a{
     top:9%;
 } 
 
-/* #pubButton{
-    background-color: chocolate;
-} */
 /* PUBLICATIONS BOX */
 
 #publications{
@@ -141,14 +138,16 @@ a{
     left: 70px;
     width: 502px;
 }
-.publishedBox{
-    top:300px;
+#publishedBox{
+    position: absolute;
+    top:310px;
+    left: 70px;
+    width: 502px;
 }
 .work{
     font-size: 12pt;
-    width: 495px;
-    border-top: 2px solid rgb(68, 37, 37);
-    background-color: blue;
+    width: 450px;
+    border-top: 0.5px solid rgb(68, 37, 37);
 }
 .title{
     display: inline;
@@ -166,6 +165,7 @@ a{
     width: 85px;
     height: 30px;
     right: 0px;
+    top:3px;
     justify-content: end; 
     text-align: end;
     margin: 3px;
