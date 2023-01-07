@@ -4,50 +4,76 @@
     <meta charset="UTF-8">
     <title>Sodi_Kroehler</title>
     <link rel="stylesheet" href="./skStyles.css">
+    <style>
+        @font-face { font-family: Doves; src: url('./Doves.ttf'); } 
+    </style>
 </head>
 <body>
-    <div id="profileBar">
-        <img id ="profilePic" src="./profile.jpg">
+    <div id="header">
         <span id="myName">SODI KROEHLER</span>
-    </div>
-    <hr>
-    <div id="bioSection">
-        <p id="bio">
-            Sodi Kroehler is a junior at the
-             the University of Pittsburgh, with a major in 
-             Computer Science and a minor in Philosophy.
-             After growing up in and then leaving the religious
-             group known as the Twelve Tribes in order to pursue
-             an education, Sodi has a unique outlook on ethics 
-             and personal responsibility.
-             He is most interested in developing AI 
-             applications for societal reform and maintenance, as 
-             well as providing a basis for future regulation from 
-             a more technical as opposed to legal standpoint.
-            Outside of school, he 
-            is the Co-Director of IT in the Alpha 
-            Kappa Psi business fraternity as well 
-            as a member of the university's Computer 
-            Science Club.
-        </p>
-    </div>
-    <hr>
-    <div id = "buttonBar"> 
-        <a  href = "https://www.icloud.com/iclouddrive/06be9XxONQOJjuqM5-__k1y7g#Portfolio"
-            target="_blank">
-            <div    id = "pubs"
-                    class = "Button">
-                Publications
+        <div id="buttonBar">
+            <div class = "NavButton" id= "pubButton" >
+                <!-- <a class = "button_desc">PUBLICATIONS </a> -->
+                PUBLICATIONS
             </div>
-        </a>
-        <a  href = "https://github.com/SodiKroehler"
-            target="_blank">
-            <div    id = "Projects"
-                    class = "Button">
-                Personal Projects
+            <div class = "NavButton" id= "projButton" >
+                <a href = "https://github.com/SodiKroehler" 
+                        class = button_desc"> PROJECTS </a>
             </div>
-        </a>   
-        
+            <div class = "NavButton" id= "persButton" >
+                <a class = "button_desc"> PERSONAL </a>
+            </div>
+        </div>
     </div>
-    <hr>
+    <div id="banner">
+        <img id ="profilePic" src="./assets/profile4.png">
+        <div id="bioSection">
+            <p id="bio">
+                Sodi Kroehler is a senior at the University of Pittsburgh, 
+                majoring in computer science and a minoring in philosophy. 
+                After growing up in and then leaving the religious group known 
+                as the Twelve Tribes in order to pursue an education, Sodi 
+                has now become a terrible artist, pictured left. <br><br> He is hoping to
+                 continue his education as PhD student next year, focusing on 
+                 the interplay between ethics and AI applications. He is 
+                 especially excited to work on misinformation-reduction 
+                 technologies.<br><br>
+                Outside of school, he is involved in several school organizations,
+                 such as the Computer Science Club and the Alpha Kappa Psi 
+                 professional fraternity. He also serves as the technical 
+                 director for Sudan Rebirth Ministry, a charity focused 
+                 on providing academic scholarships for children in South Sudan.
+                 <br><br>
+                  He is also an avid writer, having recently published his
+                   first feature-length book, “Homo Stultus - for gods”. 
+            </p>
+        </div>
+    </div>
+    <div id="publications">
+        <div class = "node pendingPub"></div>
+        <div id = "pendingBox"></div>
+        <div class = "node publishedPub"></div>
+        <div id = "publishedBox"></div>
+    </div>
+    <div id="personal">
+        <div class = "node personal"></div>
+        <div id = "sodiBox">
+            <img onclick= "window.open('https://www.instagram.com/sodikroehler/')"
+                src = "assets/insta.png" class="icon">
+            <img onclick= "window.open('https://www.facebook.com/sodi.kroehler')"
+            src = "assets/fb.png" class="icon">
+            <img onclick= "window.open('https://github.com/SodiKroehler')"
+            src = "assets/git.png" class="icon">
+            <img onclick= "window.open('https://www.linkedin.com/in/sodi-kroehler/')"
+            src = "assets/li.png" class="icon">
+        </div>
+        <div class = "node otherProfiles"></div>
+        <div id = "alexeyBox">
+            <img onclick= "window.open('https://www.instagram.com/alexey_crusoe/')"
+                src = "assets/insta.png" class="icon">
+            <img onclick= "window.open('https://www.amazon.com/Alexey-B-Crusoe/e/B0BRL4M64D/ref=dp_byline_cont_pop_book_1')"
+            src = "assets/amazon.png" class="icon">
+        </div>
+    </div>
+    <script src="skScript.js"></script>
 </body>
