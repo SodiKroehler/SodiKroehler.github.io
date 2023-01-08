@@ -7,7 +7,7 @@ fetch('https://sodikroehler.online/json/index.json', {
     .catch(err => { throw err });
 
 
-var collectedWorks = JSON.parse(collectedWorksFile);
+//var collectedWorks = JSON.parse(collectedWorksFile);
 for (work in collectedWorks.works){
   addWork(collectedWorks.works[work]);
 }
