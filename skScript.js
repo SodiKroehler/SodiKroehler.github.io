@@ -1,6 +1,6 @@
 var collectedWorksFile = '{"works": [{"idx" : 1,"title": "Homo Stultus - for gods", "desc": "Homo Stultus, for gods is a collection of nine fictional pieces of academic writing (i.e. lectures, court rulings, patent filing forms, etc.), supposedly compiled in the year 3055 and time-shipped back to us, which address ethical, philosophical, and social governance issues from their day. While generally humorous and light-hearted, it sets out several novel views on morality and philosophy of mind, particularly in applications of artificial intelligences. It also includes three versions of the true, and as yet untold, story of a former member of the Twelve Tribes cult.","status": "Published", "b1link": "./files/IDIOTS-FinalManuscript.pdf", "b2link": "https://www.amazon.com/Homo-Stultus-Alexey-B-Crusoe/dp/B0BRGS8BKR/ref=sr_1_1?crid=260FVKQ9OA42J&keywords=homo+stultus&qid=1673115134&s=books&sprefix=homo+stultus%2Cstripbooks%2C62&sr=1-1"},{"idx" : 2,"title": "Analyzing the Effects of Digital Language Contact on Hindi Language Degradation","desc": "Sodi Kroehler, Sade Benjamin, Dr. Malihe Alikhani","status": "Pending","b1link": "./files/Kroehler_Benjamin_LanguageDegradation.pdf", "b2link": ""}]}'
 
-fetch('https://github.com/SodiKroehler/SodiKroehler.github.io/json/', {
+fetch('https://sodikroehler.online/json/index.json', {
   credentials: 'same-origin'
 })  .then((response) => response.json())
     .then((json) => console.log(json))
@@ -29,6 +29,7 @@ function showHide(str) {
 
 
 function addWork(w) {
+  console.log()
   parentElement = document.getElementById('pendingBox');
   if (w.status === "Published") {
     parentElement = document.getElementById('publishedBox');
@@ -46,7 +47,7 @@ function addWork(w) {
     newChildB1.className = "linkButton";
     const newChildB1_A = document.createElement('a');
     newChildB1_A.setAttribute('href' , w.b1link);
-    newChildB1_A.setAttribute("download", "True");
+    // newChildB1_A.setAttribute("download", "True");
     newChildB1_A.innerText = "PDF";
     newChildB1.appendChild(newChildB1_A);
   }
@@ -55,7 +56,7 @@ function addWork(w) {
     newChildB2.className = "linkButton";
     const newChildB2_A = document.createElement('a');
     newChildB2_A.setAttribute('href' , w.b2link);
-    newChildB2_A.setAttribute("download", "True");
+    // newChildB2_A.setAttribute("download", "True");
     newChildB2_A.innerText = "BUY";
     newChildB2.appendChild(newChildB2_A);
   }
@@ -74,15 +75,4 @@ function addWork(w) {
   
   parentElement.appendChild(newChild);
 }
-/* <div class = "work" id = "IDIOTS">
-<div class = "title"> Homo Stultus - for gods</div>
-<div class = "linkButtonContainer">
-    <div class = "linkButton">
-        <a href = "" download>
-            PDF
-        </a
-    </div>
-    <div class = "linkButton">BUY</div>
-</div>
-<div class = "workDesc"> A collection of shit</div>
-</div> */
+
