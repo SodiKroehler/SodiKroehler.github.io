@@ -45,7 +45,7 @@ function addWork(w) {
   const newChildDesc = document.createElement("div");
   newChildDesc.classList.add("workDesc");
   newChildDesc.appendChild(document.createTextNode(w.desc));
-  var newChild1, newChild2 = null;
+  var newChildB1, newChildB2 = null;
   if (!(w.b1link === "")) {
     newChildB1 = document.createElement("div");
     newChildB1.className = "linkButton";
