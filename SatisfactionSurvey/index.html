@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>You've been Hacked!!!</title>
+    <style>
+        #fakeButton {background-color: powderblue;
+            padding:20px; 
+            margin:50px;
+        }
+    </style>
 </head>
 <body>
     <video width="720" height="1280" id="myVideo" style="display:none;">
@@ -10,7 +16,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <button onclick="byPass();" style="padding:20px; margin:50px;">Begin Survey</button>
+    <button onclick="byPass();" id = "fakeButton">Begin Survey</button>
     <script>
        var vid = document.getElementById("myVideo");
         vid.volume = 1; 
