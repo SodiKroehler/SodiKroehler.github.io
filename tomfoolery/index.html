@@ -5,8 +5,29 @@
     <title>You've been Hacked!!!</title>
 </head>
 <body>
-    <video width="320" height="240">
-        <source src="./rush.mp4" type="video/mp4">
+    <video width="720" height="1280" id="myVideo" style="display:none;">
+        <source src="./HackedAndRickRolled.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <button onclick="byPass();">Begin Survey</button>
+    <script>
+       var vid = document.getElementById("myVideo");
+        vid.volume = 1; 
+        // vid.autoplay = true;
+        vid.muted = true;
+        function byPass() {
+            var elem= document.getElementById("myVideo");
+            elem.muted = false;
+            elem.style.display = "block";
+            elem.play()
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
