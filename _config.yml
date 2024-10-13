@@ -1,12 +1,16 @@
-# theme: minima
-theme: jekyll-clean-dark
+theme: minimal
+# theme: jekyll-theme-cayman
 
+remote_theme: broccolini/swiss
 # minima:
 #   skin: dark
 
+title: "Sodi Kroehler"
+description: "Personal Website"
 lsi: false
 safe: true
 source: [https://github.com/SodiKroehler/SodiKroehler.github.io]
+show_downloads: true
 incremental: false
 markdown: GFM
 highlighter: rouge
@@ -15,3 +19,4 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+theme_color: black
