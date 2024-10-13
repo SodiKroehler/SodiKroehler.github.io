@@ -1,2 +1,5 @@
-# theme: jekyll-theme-minimal
+theme: minima
+# theme: jekyll-clean-dark
 markdown: GFM
+minima:
+  skin: dark
