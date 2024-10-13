@@ -1,7 +1,7 @@
 # theme: minima
 theme: jekyll-theme-cayman
 
-# remote_theme: broccolini/swiss
+remote_theme: broccolini/swiss
 # minima:
 #   skin: dark
 
@@ -18,4 +18,4 @@ theme: jekyll-theme-cayman
 # kramdown:
 #   math_engine: mathjax
 #   syntax_highlighter: rouge
-# theme_color: black
+theme_color: black
