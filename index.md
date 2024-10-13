@@ -1,5 +1,3 @@
-# Sodi Kroehler Personal Website
-
 ## About
 I'm Sodi Kroehler, currently studying for my Master's in CS at the University of Pittsburgh. My focus is algorithmic ethics, or more broadly computational social science. Presently, I'm working under Dr. [Yu-ru Lin](https://www.yurulin.com/) at the [PICSO](https://picsolab.github.io/) lab. 
 
