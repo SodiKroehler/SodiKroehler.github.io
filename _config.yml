@@ -1,9 +1,9 @@
-theme: minimal
-# theme: jekyll-theme-cayman
+# theme: minima
+theme: jekyll-theme-cayman
 
 remote_theme: broccolini/swiss
-# minima:
-#   skin: dark
+minima:
+  skin: dark
 
 title: "Sodi Kroehler"
 description: "Personal Website"
