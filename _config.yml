@@ -1,5 +1,17 @@
-theme: minima
+# theme: minima
 # theme: jekyll-clean-dark
+
+# minima:
+#   skin: dark
+
+lsi: false
+safe: true
+source: [https://github.com/SodiKroehler/SodiKroehler.github.io]
+incremental: false
 markdown: GFM
-minima:
-  skin: dark
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
