@@ -5,12 +5,13 @@ I'm Sodi Kroehler, currently studying for my Master's in CS at the University of
 
 ## Contact
 I, unfortunately, don't do autographs at all and only do hugs on certain days. If you're looking for anything else, feel free to write me at <sodikroehler@gmail.com>.
-[LinkedIn](www.linkedin.com/in/sodi-kroehler)
-[CV](https://www.icloud.com/iclouddrive/0b5cfx9ZM7EOiYT8eYOkn4YVg#KROEHLER%5FSODI%5FCV%5F2)
-[resume](https://www.icloud.com/iclouddrive/05aOJygw9u79zR8hNrxIwjDhg#KROEHLER%5FSODI7)
-[Github](https://github.com/SodiKroehler)
-[birdApp](https://x.com/sodi_kroehler)
-[ORCID](https://orcid.org/0009-0007-8911-140X)
+
+* [LinkedIn](www.linkedin.com/in/sodi-kroehler)
+* [CV](https://www.icloud.com/iclouddrive/0b5cfx9ZM7EOiYT8eYOkn4YVg#KROEHLER%5FSODI%5FCV%5F2)
+* [resume](https://www.icloud.com/iclouddrive/05aOJygw9u79zR8hNrxIwjDhg#KROEHLER%5FSODI7)
+* [Github](https://github.com/SodiKroehler)
+* [birdApp](https://x.com/sodi_kroehler)
+* [ORCID](https://orcid.org/0009-0007-8911-140X)
 <!-- [Scholar]() -->
 
 ## Publications
@@ -20,24 +21,28 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 - **Type**: Term Paper
 - **Written**: April 2024
 - **Published**: N/A
+
 ### CHARM: Multivariate Headline Tuning Along Predefined Feature Structures
 [PDF](https://www.icloud.com/iclouddrive/04fd2vusK74b3L5sW3kr0KlrQ#Headline_Polarity_Switches_Along_Belief_Graphs)
 - **Authors:** Sodi Kroehler, Dr. Lorraine Li
 - **Type**: Term Paper
 - **Written**: April 2024
 - **Published**: N/A
+
 ### KantCP: Maintaining Deontological Fairness in TCP Congestion Control Algorithms
 [PDF](https://www.icloud.com/iclouddrive/042s80hiWBD1fGC9mIY4L1d9g#KanTCP-Ethical_Network_Routing)
 - **Authors:** Sodi Kroehler, James Tomko, Dr. Longfei Shangguan
 - **Type**: Term Paper
 - **Written**: Dec 2023
 - **Published**: N/A
+
 ### Analyzing the Effects of Digital Language Contact on Hindi Language Degradation
 [PDF](https://www.icloud.com/iclouddrive/0d82QTX6yCxKG7TPtUK2yv5EA#Language_Degradation_by_Digital_Contact)
 - **Authors:** Sodi Kroehler, Sade Benjamin, Dr. Malihe Alikhani
 - **Type**: Term Paper
 - **Written**: April 2022
 - **Published**: N/A
+
 ### Homo Stultus 
 - **Authors:** Sodi Kroehler
 - **Type**: Book
@@ -54,3 +59,7 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 
 ## Cool Stuff
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
+  <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+</picture>
