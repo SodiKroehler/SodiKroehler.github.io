@@ -1,0 +1,13 @@
+- title: "Lessons Learned from Red Teaming a Newsbot"
+- authors: 
+  - "Dr. Elise Silva"
+  - "Madeline Franz"
+  - "Sodi Kroehler"
+- type: "opinion"
+- date: "2025-06-13"
+- order: 1
+- category: "collab"
+- publishing_info: "Published online by Tech Policy Press"
+- abstract: "A brief article detailing observations from a political chatbot made by Spotlight PA, which opened a chatbot for voters during the 2024 presidential election. We found that traditional red-teaming wasn't sufficient, and that primary areas of harm were: non-answers, translations, trust-reducing areas, and confusing question framings."
+- url: "https://www.techpolicy.press/lessons-learned-from-red-teaming-a-newsbot/"
+- pdf: ""

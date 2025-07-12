@@ -1,3 +1,11 @@
+---
+layout: default
+title: Home
+papers:
+  - paper1
+  - paper2
+---
+
 ## About
 I'm Sodi Kroehler, currently studying for my Master's in CS at the University of Pittsburgh. My focus is algorithmic ethics, or more broadly computational social science. Presently, I'm working under Dr. [Yu-ru Lin](https://www.yurulin.com/) at the [PICSO](https://picsolab.github.io/) lab. 
 
@@ -13,39 +21,17 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 <!-- [Scholar]() -->
 
 ## Publications
-### Prediction in Evolutionary Ethics: Towards Normative Autonomous Agents
-[PDF](https://www.icloud.com/iclouddrive/043JGZ8H38XNr5EoOmt9EuNGA#Prediction_in_Evolutionary_Ethics)
-- **Authors:** Sodi Kroehler, Dr. Aakash Gautam
-- **Type**: Term Paper
-- **Written**: April 2024
-- **Published**: N/A
-
-### CHARM: Multivariate Headline Tuning Along Predefined Feature Structures
-[PDF](https://www.icloud.com/iclouddrive/04fd2vusK74b3L5sW3kr0KlrQ#Headline_Polarity_Switches_Along_Belief_Graphs)
-- **Authors:** Sodi Kroehler, Dr. Lorraine Li
-- **Type**: Term Paper
-- **Written**: April 2024
-- **Published**: N/A
-
-### KantCP: Maintaining Deontological Fairness in TCP Congestion Control Algorithms
-[PDF](https://www.icloud.com/iclouddrive/042s80hiWBD1fGC9mIY4L1d9g#KanTCP-Ethical_Network_Routing)
-- **Authors:** Sodi Kroehler, James Tomko, Dr. Longfei Shangguan
-- **Type**: Term Paper
-- **Written**: Dec 2023
-- **Published**: N/A
-
-### Analyzing the Effects of Digital Language Contact on Hindi Language Degradation
-[PDF](https://www.icloud.com/iclouddrive/0d82QTX6yCxKG7TPtUK2yv5EA#Language_Degradation_by_Digital_Contact)
-- **Authors:** Sodi Kroehler, Sade Benjamin, Dr. Malihe Alikhani
-- **Type**: Term Paper
-- **Written**: April 2022
-- **Published**: N/A
-
-### Homo Stultus 
-- **Authors:** Sodi Kroehler
-- **Type**: Book
-- **Written**: Jan 2023
-- **Published**: [Amazon](https://www.amazon.com/Homo-Stultus-Alexey-B-Crusoe/dp/B0BRGS8BKR/ref=sr_1_1?crid=260FVKQ9OA42J&keywords=homo+stultus&qid=1673115134&s=books&sprefix=homo+stultus%2Cstripbooks%2C62&sr=1-1)
+<ul>
+{% for pid in page.papers %}
+  {% assign paper = site.data.publications[pid] %}
+  <li>
+    <strong>{{ paper.title }}</strong><br>
+    {{ paper.authors }}<br>
+    <em>{{ paper.venue }}</em>, {{ paper.year }}<br>
+    <a href="{{ paper.pdf }}">[PDF]</a>
+  </li>
+{% endfor %}
+</ul>
 
 
 ## Projects

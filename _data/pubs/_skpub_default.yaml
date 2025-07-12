@@ -1,0 +1,11 @@
+  - title: "title"
+  - authors: 
+    - "Sodi Kroehler"
+  - type: "paper|opinion|review|book"
+  - date: "2022-04-28"
+  - order: 1
+  - category: "undergrad|collab|solo|fun"
+  - publishing_info: "describe here"
+  - abstract: ""
+  - url: "https://example.com/understanding-ai"
+  - pdf: "/assets/pdfs/paper1.pdf"
