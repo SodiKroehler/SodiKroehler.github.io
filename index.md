@@ -21,23 +21,26 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 <!-- [Scholar]() -->
 
 ## Publications
+
 <ul>
 {% for pid in page.papers %}
   {% assign paper = site.data.pubs[pid] %}
   <li>
     <strong>{{ paper.title }}</strong><br>
-    {{ paper.authors }}<br>
-    <em>{{ paper.venue }}</em>, {{ paper.year }}<br>
-    <a href="{{ paper.pdf }}">[PDF]</a>
+    {{ paper.authors | join: ", " }}<br>
+    {% if paper.publishing_info %}
+      <em>{{ paper.publishing_info }}</em>
+      {% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}<br>
+    {% elsif paper.date %}
+      <em>{{ paper.date | date: "%Y" }}</em><br>
+    {% endif %}
+    {% if paper.url %}
+      <a href="{{ paper.url }}">[Link]</a>
+    {% endif %}
+    {% if paper.pdf %}
+      <a href="{{ paper.pdf }}">[PDF]</a>
+    {% endif %}
   </li>
-{% endfor %}
-</ul>
-
-
-## Debugging
-<ul>
-{% for key in site.data.pubs %}
-  <li>{{ key }}</li>
 {% endfor %}
 </ul>
 
