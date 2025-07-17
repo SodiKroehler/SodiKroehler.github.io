@@ -13,8 +13,8 @@ I'm Sodi Kroehler, currently studying for my Master's in CS at the University of
 I, unfortunately, don't do autographs at all and only do hugs on certain days. If you're looking for anything else, feel free to write me at <sodikroehler@gmail.com>.
 
 * [LinkedIn](www.linkedin.com/in/sodi-kroehler)
-* [CV](personal_website/SodiKroehler.github.io/assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
-* [resume](personal_website/SodiKroehler.github.io/assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
+* [CV](assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
+* [resume](assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
 * [Github](https://github.com/SodiKroehler)
 * [birdApp](https://x.com/sodi_kroehler)
 * [ORCID](https://orcid.org/0009-0007-8911-140X)
@@ -30,6 +30,14 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
     <em>{{ paper.venue }}</em>, {{ paper.year }}<br>
     <a href="{{ paper.pdf }}">[PDF]</a>
   </li>
+{% endfor %}
+</ul>
+
+
+## Debugging
+<ul>
+{% for key in site.data.pubs %}
+  <li>{{ key }}</li>
 {% endfor %}
 </ul>
 

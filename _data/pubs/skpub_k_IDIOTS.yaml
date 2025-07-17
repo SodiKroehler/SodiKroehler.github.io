@@ -1,11 +1,11 @@
-- title: "Homo Stultus"
-- authors: 
+title: "Homo Stultus"
+authors: 
   - "Sodi Kroehler"
-- type: "book"
-- date: "2023-01-02"
-- order: 2
-- category: "fun"
-- publishing_info: "Privately published on Amazon"
-- abstract: "A humorous book dealing with ethics, politics, and wisdom supposedly 'from the future.'"
-- url: "https://www.amazon.com/Homo-Stultus-Alexey-B-Crusoe/dp/B0BRGS8BKR/ref=sr_1_1?crid=260FVKQ9OA42J&keywords=homo+stultus&qid=1673115134&s=books&sprefix=homo+stultus%2Cstripbooks%2C62&sr=1-1)"
-- pdf: "/assets/pdfs/IDIOTS-FinalManuscript.pdf"
+type: "book"
+date: "2023-01-02"
+order: 2
+category: "fun"
+publishing_info: "Privately published on Amazon"
+abstract: "A humorous book dealing with ethics, politics, and wisdom supposedly 'from the future.'"
+url: "https://www.amazon.com/Homo-Stultus-Alexey-B-Crusoe/dp/B0BRGS8BKR/ref=sr_1_1?crid=260FVKQ9OA42J&keywords=homo+stultus&qid=1673115134&s=books&sprefix=homo+stultus%2Cstripbooks%2C62&sr=1-1)"
+pdf: "/assets/pdfs/IDIOTS-FinalManuscript.pdf"

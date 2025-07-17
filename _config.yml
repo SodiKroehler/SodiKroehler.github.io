@@ -1,21 +1,30 @@
-theme: minima
-theme: jekyll-theme-cayman
 
-# remote_theme: broccolini/swiss
-# minima:
-#   skin: dark
 
-# title: "Sodi Kroehler"
-# description: "Personal Website"
-# lsi: false
-# safe: true
-# show_downloads: true
-# incremental: false
-# markdown: GFM
-# highlighter: rouge
-# gist:
-#   noscript: false
-# kramdown:
-#   math_engine: mathjax
-#   syntax_highlighter: rouge
-# theme_color: black
+title: "Sodi Kroehler"
+theme: jekyll-theme-midnight 
+markdown: kramdown
+highlighter: rouge
+
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+relative_links:
+  enabled: true
+  collections: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+      permalink: pretty
