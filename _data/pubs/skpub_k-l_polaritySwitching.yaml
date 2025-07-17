@@ -8,5 +8,4 @@ order: 1
 category: "collab"
 publishing_info: "N/A"
 abstract: "This article extends previous work by 'translating' news articles from one leaning to another - i.e., 'right' to 'left' or vice versa. In addition, it can also train for other aspects, such as increasing/decreasing average word length, removing profanity, etc. It uses guide words at the beginning of the phrase, along with a GAN-trained model to achieve this."
-url: ""
 pdf: "assets\\pdfs\\Kroehler_Li_Headline-Polarity-Switches-Along-Belief-Graphs.pdf"
