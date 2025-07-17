@@ -2,8 +2,8 @@
 layout: default
 title: Home
 papers:
-  - paper1
-  - paper2
+  - skpub_s-f-k_spotlightLessonsLearned
+  - skpub_k-l_polaritySwitching
 ---
 
 ## About
@@ -13,8 +13,8 @@ I'm Sodi Kroehler, currently studying for my Master's in CS at the University of
 I, unfortunately, don't do autographs at all and only do hugs on certain days. If you're looking for anything else, feel free to write me at <sodikroehler@gmail.com>.
 
 * [LinkedIn](www.linkedin.com/in/sodi-kroehler)
-* [CV](https://www.icloud.com/iclouddrive/0b5cfx9ZM7EOiYT8eYOkn4YVg#KROEHLER%5FSODI%5FCV%5F2)
-* [resume](https://www.icloud.com/iclouddrive/05aOJygw9u79zR8hNrxIwjDhg#KROEHLER%5FSODI7)
+* [CV](personal_website/SodiKroehler.github.io/assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
+* [resume](personal_website/SodiKroehler.github.io/assets/pdfs/Kroehler_Benjamin_Analyzing-the-Effects-of-Digital-Language-Contact-on-Hindi-Language-Degradation.pdf)
 * [Github](https://github.com/SodiKroehler)
 * [birdApp](https://x.com/sodi_kroehler)
 * [ORCID](https://orcid.org/0009-0007-8911-140X)
@@ -23,7 +23,7 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 ## Publications
 <ul>
 {% for pid in page.papers %}
-  {% assign paper = site.data.publications[pid] %}
+  {% assign paper = site.data.pubs[pid] %}
   <li>
     <strong>{{ paper.title }}</strong><br>
     {{ paper.authors }}<br>
@@ -40,10 +40,7 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 - **Technologies:** React Native, Redux, NextJS, TypeScript, Prisma, Pusher/WebRTC
 - **Links:** [Website](https://www.chitters.net/)
 
-
-## Cool Stuff
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
-  <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-</picture>
+### Cardui: LLM Utility Package
+- **Description:** A simple wrapper around most major LLM providers, written in python. Enables within-prompt batching as well as significantly reduces boilerplate when running prompts on pandas dataframes.
+- **Technologies:** Python
+- **Links:** [Website](https://test.pypi.org/project/cardui/)
