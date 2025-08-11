@@ -35,7 +35,7 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
     {{ paper.authors | join: ", " }}<br>
     {% if paper.publishing_info %}
       <em>{{ paper.publishing_info }}</em>
-      {% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}<br>
+      {% if paper.date %},{{ paper.date | date: "%Y" }}{% endif %}<br>
     {% elsif paper.date %}
       <em>{{ paper.date | date: "%Y" }}</em><br>
     {% endif %}
