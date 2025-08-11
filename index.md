@@ -3,8 +3,8 @@ layout: default
 title: Sodi Kroehler
 papers:
   - skpub_s-f-k_spotlightLessonsLearned
-  - skpub_s-f-k_spotlightLessonsLearned
-  - skpub_s-f-k_spotlightLessonsLearned
+  - skpub_k-f-s-s-l-SpotlightDetailedReport.yaml
+  - skpub_k-l_polaritySwitching
 ---
 <img src="assets/2024_portrait.png" alt="Sodi Kroehler" style="width:120px; border-radius:8px; float:left; margin-right:15px;">
 
@@ -54,3 +54,8 @@ I, unfortunately, don't do autographs at all and only do hugs on certain days. I
 - **Technologies:** React Native, Redux, NextJS, TypeScript, Prisma, Pusher/WebRTC
 - **Links:** [Website](https://www.chitters.net/)
 
+
+<!-- ### Cardui: LLM Utility Package
+- **Description:** A simple wrapper around most major LLM providers, written in python. Enables within-prompt batching as well as significantly reduces boilerplate when running prompts on pandas dataframes.
+- **Technologies:** Python
+- **Links:** [Website](https://test.pypi.org/project/cardui/) -->
