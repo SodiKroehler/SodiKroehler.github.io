@@ -3,7 +3,7 @@ layout: default
 title: Sodi Kroehler
 papers:
   - skpub_s-f-k_spotlightLessonsLearned
-  - skpub_k-f-s-s-l-SpotlightDetailedReport.yaml
+  - skpub_k-f-s-s-l-SpotlightDetailedReport
   - skpub_k-l_polaritySwitching
 ---
 <img src="assets/2024_portrait.png" alt="Sodi Kroehler" style="width:120px; border-radius:8px; float:left; margin-right:15px;">
