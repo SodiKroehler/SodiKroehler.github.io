@@ -5,12 +5,13 @@ papers:
   - skpub_s-f-k_spotlightLessonsLearned
   - skpub_k-f-s-s-l-SpotlightDetailedReport
   - skpub_k-l_polaritySwitching
+  - skpub_s_trustButEasilyVerify
 ---
 <img src="assets/2024_portrait.png" alt="Sodi Kroehler" style="width:120px; border-radius:8px; float:left; margin-right:15px;">
 
 ## About
 
-I'm Sodi Kroehler, currently studying for my Master's in CS at the University of Pittsburgh. My focus is algorithmic ethics, or more broadly computational social science. Presently, I'm working under Dr. [Yu-ru Lin](https://www.yurulin.com/) at the [PICSO](https://picsolab.github.io/) lab. 
+I'm Sodi Kroehler, currently in my last semester of a Master's in CS at the University of Pittsburgh. My focus is algorithmic ethics, or more broadly computational social science. I recently completed my thesis, advised by Dr. [Yu-ru Lin](https://www.yurulin.com/) and Dr. [Lorraine Li](https://lorraine333.github.io/).
 
 ## Contact
 I, unfortunately, don't do autographs at all and only do hugs on certain days. If you're looking for anything else, feel free to write me at <sodikroehler@gmail.com>.

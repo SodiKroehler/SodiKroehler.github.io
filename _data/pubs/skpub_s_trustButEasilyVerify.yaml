@@ -1,0 +1,12 @@
+title: "Trust but (Easily) Verify: Ambivalent Bias Visualizations for News Media"
+authors: 
+  - "Sodi Kroehler"
+  - "Dr. Aakash Gautam"
+type: "Workshop Submission"
+date: "2025-12-15"
+order: 4
+category: "collab"
+publishing_info: "Draft Only"
+abstract: "Previous work on bias reduction in news media has focused on improving the efficacy of bias indication techniques, with the goal of reducing the biased content that news consumers read and believe. While motivated well, this effort often fails since it is primarily designed for the utility of the researcher and does not take into account the user's preferences and desires, which may at times conflict with it. This work attempts to build on the work of pluralism to introduce a new method of bias reduction that also gives utility to the consumer. Through user interviews, we iterate on a design that meets users needs while implementing features known to reduce bias, settling on a news aggregator app which we build and test."
+url: ""
+pdf: "assets\\pdfs\\Kroeher_Gautam_Trust_But_Easily_Verify_Draft1.pdf"
