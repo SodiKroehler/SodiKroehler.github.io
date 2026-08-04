@@ -1,0 +1,15 @@
+# Loan terms (constants). Payments live in _data/payments/ — one YAML file each.
+# Log a payment via the "Log loan payment" GitHub Action (Actions → Run workflow).
+#
+# Payment file format (_data/payments/YYYY-MM-DD_HHMMSS.yaml):
+#   date: "2026-09-01"          # YYYY-MM-DD
+#   time: "14:30:22"            # optional, HH:MM:SS (UTC)
+#   amount: 1000                # USD, number
+#   confirmation: "Zelle ref 48291"  # free text; may be blank
+
+principal: 35000
+annual_rate: 0.0514
+scheduled_payment: 1000
+scheduled_months: 38
+scheduled_total_interest: 3000
+scheduled_total_repaid: 38000

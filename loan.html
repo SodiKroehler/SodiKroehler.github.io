@@ -1,0 +1,543 @@
+---
+layout: null
+permalink: /loan/
+title: Personal Loan
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Personal Loan</title>
+  <style>
+    @font-face {
+      font-family: "Doves";
+      src: url("/Doves.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --cream: #f4efe4;
+      --cream-deep: #ebe3d2;
+      --ink: #1a2e24;
+      --forest: #1f4a38;
+      --forest-mid: #2d6a4f;
+      --gold: #c4a35a;
+      --gold-bright: #d4b56a;
+      --gold-soft: #e8d5a3;
+      --muted: #5c6b62;
+      --line: #d6cdb8;
+      --overpay-bg: #f3ead0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Doves", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      background:
+        radial-gradient(ellipse 120% 80% at 50% -20%, #fff9ee 0%, transparent 55%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--forest-mid);
+      margin-bottom: 0.4rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: normal;
+      color: var(--forest);
+      letter-spacing: 0.02em;
+    }
+
+    /* —— Progress ring —— */
+    .ring-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .ring {
+      position: relative;
+      width: min(280px, 78vw);
+      height: min(280px, 78vw);
+    }
+
+    .ring svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .ring .track {
+      fill: none;
+      stroke: var(--cream-deep);
+      stroke-width: 12;
+    }
+
+    .ring .progress {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 12;
+      stroke-linecap: round;
+      stroke-dasharray: 0 999;
+      transition: stroke-dasharray 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      filter: drop-shadow(0 0 6px rgba(196, 163, 90, 0.35));
+    }
+
+    .ring-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .ring-center .pct {
+      font-size: clamp(2.4rem, 10vw, 3.25rem);
+      color: var(--forest);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .ring-center .pct span {
+      font-size: 0.45em;
+      vertical-align: super;
+      margin-left: 0.05em;
+      color: var(--gold);
+    }
+
+    .ring-center .sub {
+      margin-top: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 11.5rem;
+      line-height: 1.35;
+    }
+
+    /* —— Summary —— */
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .summary dt {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .summary dd {
+      font-size: 1.05rem;
+      color: var(--forest);
+    }
+
+    @media (max-width: 520px) {
+      .summary { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    /* —— Ledger —— */
+    section.ledger h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .empty {
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 1rem 0;
+    }
+
+    .payments {
+      list-style: none;
+    }
+
+    .payments li {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem 1rem;
+      align-items: start;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .check {
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .check svg {
+      width: 0.7rem;
+      height: 0.7rem;
+      display: block;
+    }
+
+    .pay-meta .when {
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .pay-meta .confirm {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+      word-break: break-word;
+    }
+
+    .pay-amount {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .pay-amount .dollars {
+      color: var(--forest);
+      font-size: 1.05rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      background: var(--overpay-bg);
+      border: 1px solid var(--gold-soft);
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+    }
+
+    /* —— Note —— */
+    .note {
+      margin-top: 2.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note a {
+      color: var(--forest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--gold);
+    }
+
+    .note a:hover {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Family loan</p>
+      <h1>Personal Loan Tracker</h1>
+    </header>
+
+    <div class="ring-wrap">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <circle class="track" cx="60" cy="60" r="52"></circle>
+          <circle class="progress" id="ring-progress" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="ring-center">
+          <div class="pct" id="pct">0<span>%</span></div>
+          <p class="sub" id="ring-sub">—</p>
+        </div>
+      </div>
+    </div>
+
+    <dl class="summary">
+      <div>
+        <dt>Total paid</dt>
+        <dd id="total-paid">—</dd>
+      </div>
+      <div>
+        <dt>Balance remaining</dt>
+        <dd id="balance">—</dd>
+      </div>
+      <div>
+        <dt>Projected payoff</dt>
+        <dd id="payoff">—</dd>
+      </div>
+    </dl>
+
+    <section class="ledger" aria-labelledby="ledger-heading">
+      <h2 id="ledger-heading">Payment ledger</h2>
+      <ul class="payments" id="payments"></ul>
+      <p class="empty" id="empty" hidden>No payments logged yet.</p>
+    </section>
+
+    <p class="note">
+      Signed promissory note on file —
+      <a href="/assets/pdfs/promissory-note.pdf" download>download PDF</a>.
+    </p>
+  </main>
+
+  <script>
+    const LOAN = {{ site.data.loan | jsonify }};
+    const PAYMENTS_RAW = {{ site.data.payments | jsonify }};
+
+    const CHECK_SVG =
+      '<svg viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M4.7 9.2 1.8 6.3l1.1-1.1 1.8 1.8 4-4.1 1.1 1.1z"/></svg>';
+
+    function money(n) {
+      const neg = n < 0;
+      const abs = Math.abs(n);
+      const formatted = abs.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: abs % 1 === 0 ? 0 : 2,
+        maximumFractionDigits: 2,
+      });
+      return neg ? "−" + formatted.replace("$", "") : formatted;
+    }
+
+    function parsePayments(raw) {
+      if (!raw || typeof raw !== "object") return [];
+      return Object.values(raw)
+        .filter((p) => p && p.date != null && p.amount != null)
+        .map((p) => ({
+          date: String(p.date),
+          time: p.time != null && String(p.time).trim() !== "" ? String(p.time) : null,
+          amount: Number(p.amount),
+          confirmation: p.confirmation != null ? String(p.confirmation) : "",
+        }))
+        .filter((p) => Number.isFinite(p.amount));
+    }
+
+    function sortChronological(payments) {
+      return [...payments].sort((a, b) => {
+        const da = a.date + "T" + (a.time || "00:00:00");
+        const db = b.date + "T" + (b.time || "00:00:00");
+        return da < db ? -1 : da > db ? 1 : 0;
+      });
+    }
+
+    function compute(loan, paymentsAsc) {
+      const principal = Number(loan.principal);
+      const monthlyRate = Number(loan.annual_rate) / 12;
+      const scheduled = Number(loan.scheduled_payment);
+
+      let balance = principal;
+      let totalPaid = 0;
+
+      for (const p of paymentsAsc) {
+        balance = balance * (1 + monthlyRate);
+        balance = Math.max(0, balance - p.amount);
+        totalPaid += p.amount;
+      }
+
+      // Progress toward retiring the original principal.
+      let progress = 1 - balance / principal;
+      if (balance <= 0.005) {
+        balance = 0;
+        progress = 1;
+      }
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Project remaining $scheduled payments on the declining balance.
+      let projectedMonths = null;
+      let projectedPayoff = null;
+      if (balance > 0) {
+        let sim = balance;
+        let months = 0;
+        const cap = 600;
+        while (sim > 0.005 && months < cap) {
+          sim = sim * (1 + monthlyRate) - scheduled;
+          months += 1;
+        }
+        projectedMonths = months;
+        if (months < cap) {
+          const last = paymentsAsc.length
+            ? paymentsAsc[paymentsAsc.length - 1].date
+            : new Date().toISOString().slice(0, 10);
+          const d = new Date(last + "T12:00:00Z");
+          d.setUTCMonth(d.getUTCMonth() + months);
+          projectedPayoff = d.toLocaleString("en-US", {
+            month: "short",
+            year: "numeric",
+            timeZone: "UTC",
+          });
+        }
+      } else {
+        projectedMonths = 0;
+        projectedPayoff = "Paid off";
+      }
+
+      return {
+        balance,
+        totalPaid,
+        progress,
+        count: paymentsAsc.length,
+        projectedMonths,
+        projectedPayoff,
+        scheduled,
+        principal,
+      };
+    }
+
+    function formatWhen(p) {
+      const d = new Date(p.date + "T12:00:00");
+      const dateStr = d.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+      return p.time ? dateStr + " · " + p.time + " UTC" : dateStr;
+    }
+
+    function renderRing(state) {
+      const r = 52;
+      const C = 2 * Math.PI * r;
+      const filled = C * state.progress;
+      const el = document.getElementById("ring-progress");
+      // Defer so the CSS transition plays on load.
+      requestAnimationFrame(() => {
+        el.style.strokeDasharray = filled + " " + C;
+      });
+
+      const pct = Math.round(state.progress * 1000) / 10;
+      const pctLabel = Number.isInteger(pct) ? String(pct) : pct.toFixed(1);
+      document.getElementById("pct").innerHTML =
+        pctLabel + "<span>%</span>";
+
+      document.getElementById("ring-sub").textContent =
+        money(state.balance) +
+        " of " +
+        money(state.principal) +
+        " remaining · " +
+        state.count +
+        (state.count === 1 ? " payment" : " payments") +
+        " made";
+    }
+
+    function renderSummary(state) {
+      document.getElementById("total-paid").textContent = money(state.totalPaid);
+      document.getElementById("balance").textContent = money(state.balance);
+
+      const payoffEl = document.getElementById("payoff");
+      if (state.balance === 0) {
+        payoffEl.textContent = "Paid off";
+      } else if (state.projectedPayoff != null) {
+        payoffEl.textContent =
+          state.projectedPayoff +
+          (state.projectedMonths != null
+            ? " · " + state.projectedMonths + " left"
+            : "");
+      } else {
+        payoffEl.textContent = "—";
+      }
+    }
+
+    function renderLedger(paymentsDesc, scheduled) {
+      const list = document.getElementById("payments");
+      const empty = document.getElementById("empty");
+      list.innerHTML = "";
+
+      if (!paymentsDesc.length) {
+        empty.hidden = false;
+        return;
+      }
+      empty.hidden = true;
+
+      for (const p of paymentsDesc) {
+        const li = document.createElement("li");
+
+        const check = document.createElement("div");
+        check.className = "check";
+        check.innerHTML = CHECK_SVG;
+        check.setAttribute("aria-label", "Logged");
+
+        const meta = document.createElement("div");
+        meta.className = "pay-meta";
+        const when = document.createElement("div");
+        when.className = "when";
+        when.textContent = formatWhen(p);
+        meta.appendChild(when);
+        if (p.confirmation.trim()) {
+          const conf = document.createElement("div");
+          conf.className = "confirm";
+          conf.textContent = p.confirmation;
+          meta.appendChild(conf);
+        }
+
+        const amt = document.createElement("div");
+        amt.className = "pay-amount";
+        const dollars = document.createElement("div");
+        dollars.className = "dollars";
+        dollars.textContent = money(p.amount);
+        amt.appendChild(dollars);
+        if (p.amount > scheduled) {
+          const badge = document.createElement("span");
+          badge.className = "badge";
+          badge.textContent = "Overpayment";
+          amt.appendChild(badge);
+        }
+
+        li.appendChild(check);
+        li.appendChild(meta);
+        li.appendChild(amt);
+        list.appendChild(li);
+      }
+    }
+
+    (function init() {
+      const paymentsAsc = sortChronological(parsePayments(PAYMENTS_RAW));
+      const state = compute(LOAN, paymentsAsc);
+      const paymentsDesc = [...paymentsAsc].reverse();
+
+      renderRing(state);
+      renderSummary(state);
+      renderLedger(paymentsDesc, state.scheduled);
+    })();
+  </script>
+</body>
+</html>

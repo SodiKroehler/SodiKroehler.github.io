@@ -1,0 +1,122 @@
+name: Log loan payment
+
+on:
+  workflow_dispatch:
+    inputs:
+      amount:
+        description: "Payment amount in USD (required, positive number)"
+        required: true
+        type: string
+      confirmation:
+        description: "Confirmation / note (optional free text)"
+        required: false
+        type: string
+        default: ""
+      date:
+        description: "Payment date YYYY-MM-DD (optional; defaults to today UTC)"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  log-payment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate inputs and write payment file
+        id: write
+        env:
+          AMOUNT: ${{ inputs.amount }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+          DATE_INPUT: ${{ inputs.date }}
+        run: |
+          python3 <<'PY'
+          import os, re, sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          amount_raw = os.environ.get("AMOUNT", "").strip().replace(",", "")
+          try:
+              amount = float(amount_raw)
+          except ValueError:
+              print(f"::error::Amount must be a number, got: {amount_raw!r}")
+              sys.exit(1)
+          if amount <= 0:
+              print("::error::Amount must be a positive number")
+              sys.exit(1)
+
+          now = datetime.now(timezone.utc)
+          date_input = os.environ.get("DATE_INPUT", "").strip()
+          if date_input:
+              if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_input):
+                  print(f"::error::Date must be YYYY-MM-DD, got: {date_input!r}")
+                  sys.exit(1)
+              try:
+                  datetime.strptime(date_input, "%Y-%m-%d")
+              except ValueError:
+                  print(f"::error::Invalid calendar date: {date_input!r}")
+                  sys.exit(1)
+              pay_date = date_input
+          else:
+              pay_date = now.strftime("%Y-%m-%d")
+
+          pay_time = now.strftime("%H:%M:%S")
+          confirmation = os.environ.get("CONFIRMATION", "") or ""
+
+          out_dir = Path("_data/payments")
+          out_dir.mkdir(parents=True, exist_ok=True)
+          filename = f"{pay_date}_{now.strftime('%H%M%S')}.yaml"
+          path = out_dir / filename
+          if path.exists():
+              filename = f"{pay_date}_{now.strftime('%H%M%S')}_{now.microsecond:06d}.yaml"
+              path = out_dir / filename
+
+          # Write YAML by hand so confirmation text is safely quoted.
+          def yaml_str(s: str) -> str:
+              escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+              return f'"{escaped}"'
+
+          # Prefer integer form when the amount is whole dollars.
+          amount_repr = str(int(amount)) if amount == int(amount) else repr(amount)
+
+          lines = [
+              f"date: {yaml_str(pay_date)}",
+              f"time: {yaml_str(pay_time)}",
+              f"amount: {amount_repr}",
+              f"confirmation: {yaml_str(confirmation)}",
+              "",
+          ]
+          path.write_text("\n".join(lines), encoding="utf-8")
+          print(f"Wrote {path}")
+
+          # Human-friendly amount for the commit message
+          if amount == int(amount):
+              amount_msg = f"${int(amount):,}"
+          else:
+              amount_msg = f"${amount:,.2f}"
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write(f"path={path}\n")
+              fh.write(f"date={pay_date}\n")
+              fh.write(f"amount_msg={amount_msg}\n")
+          PY
+
+      - name: Commit and push
+        env:
+          PAY_DATE: ${{ steps.write.outputs.date }}
+          AMOUNT_MSG: ${{ steps.write.outputs.amount_msg }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/payments/
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 1
+          fi
+          git commit -m "Log payment: ${AMOUNT_MSG} on ${PAY_DATE}"
+          git push
